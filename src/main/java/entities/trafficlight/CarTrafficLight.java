@@ -4,6 +4,7 @@ import entities.signal.CarTrafficSignal;
 import entities.signal.TrafficSignal;
 import lombok.Getter;
 import lombok.Setter;
+import utils.PropertiesUtil;
 
 /**
  * Класс автомобильного светофора
@@ -14,6 +15,7 @@ public class CarTrafficLight extends TrafficLight {
 
     public CarTrafficLight(String name) {
         super(name);
+        this.priorityOfCar = Double.parseDouble(PropertiesUtil.getProperty("weightOfCar"));
     }
 
     /**

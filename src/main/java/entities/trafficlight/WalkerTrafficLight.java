@@ -4,6 +4,7 @@ import entities.signal.TrafficSignal;
 import entities.signal.WalkerTrafficSignal;
 import lombok.Getter;
 import lombok.Setter;
+import utils.PropertiesUtil;
 
 /**
  * Класс пешеходного светофора
@@ -14,6 +15,7 @@ public class WalkerTrafficLight extends TrafficLight {
 
     public WalkerTrafficLight(String name) {
         super(name);
+        this.priorityOfWalker = Double.parseDouble(PropertiesUtil.getProperty("priorityOfWalker"));
     }
 
     /**

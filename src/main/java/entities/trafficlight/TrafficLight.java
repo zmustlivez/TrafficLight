@@ -15,10 +15,23 @@ import java.util.UUID;
 public abstract class TrafficLight {
     private final UUID id;
     private String name;
+
+    // продолжительность
     private Duration duration;
+
+    // приоритет светофора
+    private int priority;
+
+    //    статус самого светофора
     private Status status;
-    private List<Status> statusList;
-    private Queue trafficLightsQueue;
+
+    //  очередь задач данного светофора
+    private Queue<Status> statusList;
+
+    //    список статусов остальных светофоров
+    private List<Status> otherTrafficLights;
+    protected double priorityOfWalker;
+    protected double priorityOfCar;
 
     public TrafficLight(String name) {
         this.id = UUID.randomUUID();
