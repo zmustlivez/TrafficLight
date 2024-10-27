@@ -1,8 +1,11 @@
 package entities.camera;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Objects;
 import java.util.UUID;
 
+@Slf4j
 public abstract class Camera {
     private final UUID id;
     private String name;
@@ -12,13 +15,16 @@ public abstract class Camera {
         this.id = UUID.randomUUID();
         this.name = name;
     }
+
     /**
      * Метод генерирует случайное количество пешеходов или машин, которое видит камера на перекрестке
      */
 
-    public void recognize() {
+    public void recognize(String nameTrafficLight) {
         int rnd = (int) (Math.random() * 11);
         this.queue += rnd;
+        log.info("Очередь перед светофором {} сгенерирована: {}", nameTrafficLight, queue);
+
     }
 
     public int getQueue() {

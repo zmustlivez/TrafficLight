@@ -1,6 +1,8 @@
 package testCamera;
 
 import entities.Status;
+import entities.camera.CarCamera;
+import entities.camera.WalkerCamera;
 import entities.signal.CarTrafficSignal;
 import entities.signal.TrafficSignal;
 import entities.signal.WalkerTrafficSignal;
@@ -21,7 +23,7 @@ public class TestChangeTrafficLight {
     @Test
     public void testChangeRedToGreen() {
         if (carTrafficLight == null) {
-            carTrafficLight = new CarTrafficLight("");
+            carTrafficLight = new CarTrafficLight("", new CarCamera(""));
         }
         carTrafficLight.setStatus(new Status());
         carTrafficLight.getStatus().setSignal(carTrafficSignalRed);
@@ -35,7 +37,7 @@ public class TestChangeTrafficLight {
                 "Значение должно быть GREEN" + carTrafficLight.getStatus().getSignal());
 
         if (walkerTrafficLight == null) {
-            walkerTrafficLight = new WalkerTrafficLight("");
+            walkerTrafficLight = new WalkerTrafficLight("", new WalkerCamera(""));
         }
         walkerTrafficLight.setStatus(new Status());
         walkerTrafficLight.getStatus().setSignal(walkerTrafficSignalRed);
@@ -50,7 +52,7 @@ public class TestChangeTrafficLight {
     @Test
     public void testChangeGreenToRed() {
         if (carTrafficLight == null) {
-            carTrafficLight = new CarTrafficLight("");
+            carTrafficLight = new CarTrafficLight("",  new CarCamera(""));
         }
         carTrafficLight.setStatus(new Status());
         carTrafficLight.getStatus().setSignal(carTrafficSignalGreen);
@@ -65,7 +67,7 @@ public class TestChangeTrafficLight {
                 "Значение должно быть RED" + carTrafficLight.getStatus().getSignal());
 
         if (walkerTrafficLight == null) {
-            walkerTrafficLight = new WalkerTrafficLight("");
+            walkerTrafficLight = new WalkerTrafficLight("",  new WalkerCamera(""));
         }
         walkerTrafficLight.setStatus(new Status());
         walkerTrafficLight.getStatus().setSignal(walkerTrafficSignalGreen);

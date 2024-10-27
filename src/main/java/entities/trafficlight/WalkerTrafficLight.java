@@ -1,5 +1,6 @@
 package entities.trafficlight;
 
+import entities.camera.WalkerCamera;
 import entities.signal.TrafficSignal;
 import entities.signal.WalkerTrafficSignal;
 import lombok.Getter;
@@ -11,10 +12,10 @@ import utils.PropertiesUtil;
  */
 @Getter
 @Setter
-public class WalkerTrafficLight extends TrafficLight {
+public class WalkerTrafficLight extends TrafficLight{
 
-    public WalkerTrafficLight(String name) {
-        super(name);
+    public WalkerTrafficLight(String name,  WalkerCamera walkerCamera) {
+        super(name, walkerCamera);
         this.priorityOfWalker = Double.parseDouble(PropertiesUtil.getProperty("priorityOfWalker"));
     }
 
@@ -38,4 +39,6 @@ public class WalkerTrafficLight extends TrafficLight {
         }
 
     }
+
+
 }
