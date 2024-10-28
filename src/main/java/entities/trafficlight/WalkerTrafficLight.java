@@ -12,9 +12,9 @@ import utils.PropertiesUtil;
  */
 @Getter
 @Setter
-public class WalkerTrafficLight extends TrafficLight{
+public class WalkerTrafficLight extends TrafficLight {
 
-    public WalkerTrafficLight(String name,  WalkerCamera walkerCamera) {
+    public WalkerTrafficLight(String name, WalkerCamera walkerCamera) {
         super(name, walkerCamera);
         this.priorityOfWalker = Double.parseDouble(PropertiesUtil.getProperty("priorityOfWalker"));
     }
@@ -24,7 +24,7 @@ public class WalkerTrafficLight extends TrafficLight{
      */
     @Override
     public void changeSignalRedToGreen(TrafficSignal signal) {
-        if (signal==WalkerTrafficSignal.STOP) {
+        if (signal == WalkerTrafficSignal.STOP) {
             this.getStatus().setSignal(WalkerTrafficSignal.WALK);
         }
     }
@@ -34,11 +34,17 @@ public class WalkerTrafficLight extends TrafficLight{
      */
     @Override
     public void changeSignalGreenToRed(TrafficSignal signal) {
-        if (signal==WalkerTrafficSignal.WALK) {
+        if (signal == WalkerTrafficSignal.WALK) {
             this.getStatus().setSignal(WalkerTrafficSignal.STOP);
         }
-
     }
 
-
+    /**
+     * @param query - количество человек в очереди перед светофором
+     * @return - возвращает длительность включения зеленого света светофора
+     */
+    @Override
+    public double getGreenTime(int query) {
+        return query * Double.parseDouble(PropertiesUtil.getProperty("timeOneWalker"));
+    }
 }

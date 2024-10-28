@@ -68,5 +68,13 @@ public class CarTrafficLight extends TrafficLight {
         }
     }
 
-
+    /**
+     *
+     * @param query - количество машин в очереди перед светофором
+     * @return - возвращает длительность включения зеленого света светофора
+     */
+    @Override
+    public double getGreenTime(int query) {
+        return query*Double.parseDouble(PropertiesUtil.getProperty("timeOneCar"));
+    }
 }

@@ -24,7 +24,11 @@ public abstract class Camera {
         int rnd = (int) (Math.random() * 11);
         this.queue += rnd;
         log.info("Очередь перед светофором {} сгенерирована: {}", nameTrafficLight, queue);
-
+    }
+    public void decrease(String nameTrafficLight) {
+        int rnd = (int) (Math.random() * this.queue);
+        this.queue -= rnd;
+        log.info("Очередь перед светофором {} уменьшилась на: {} и стала {}", nameTrafficLight, rnd,  queue);
     }
 
     public int getQueue() {

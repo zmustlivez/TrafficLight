@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestCamera {
-    Camera wCamera = new WalkerCamera("");
-    Camera cCamera = new WalkerCamera("");
+    private final Camera wCamera = new WalkerCamera("");
+    private final Camera cCamera = new WalkerCamera("");
 
     @Test
     public void recognize() {

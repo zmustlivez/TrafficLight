@@ -12,10 +12,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestChangeTrafficLight {
-    TrafficSignal carTrafficSignalRed = CarTrafficSignal.RED;
-    TrafficSignal carTrafficSignalGreen = CarTrafficSignal.GREEN;
-    TrafficSignal walkerTrafficSignalRed = WalkerTrafficSignal.STOP;
-    TrafficSignal walkerTrafficSignalGreen = WalkerTrafficSignal.WALK;
+    private final TrafficSignal carTrafficSignalRed = CarTrafficSignal.RED;
+    private final TrafficSignal carTrafficSignalGreen = CarTrafficSignal.GREEN;
+    private final TrafficSignal walkerTrafficSignalRed = WalkerTrafficSignal.STOP;
+    private final TrafficSignal walkerTrafficSignalGreen = WalkerTrafficSignal.WALK;
 
     CarTrafficLight carTrafficLight;
     WalkerTrafficLight walkerTrafficLight;
