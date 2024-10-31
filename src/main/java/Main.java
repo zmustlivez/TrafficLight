@@ -14,27 +14,23 @@ public class Main {
     public static void main(String[] args) {
         TraffisService traffisService = new TrafficServiceImpl();
         traffisService.start(createCarTrafficLights(), createWalkerTrafficLights());
+        Boolean b = new Boolean("/true");
+        System.out.println("boolean" + b);
+        int i =5;
+        i=i++ + ++i;
+        System.out.println(i);
     }
 
 
     static List<TrafficLight> createCarTrafficLights() {
         return new ArrayList<>() {
             {
-                add( new CarTrafficLight("carTrafficLight1",  new CarCamera("Cam11"),
+                add(new CarTrafficLight("carTrafficLight1", new CarCamera("Cam11"),
                         new WalkerTrafficLight("walkerTl1", new WalkerCamera("wCam1"))));
 //                add( new CarTrafficLight("carTrafficLight2",  new CarCamera("Cam12")));
 //                add( new CarTrafficLight("carTrafficLight3",  new CarCamera("Cam13")));
 //                add( new CarTrafficLight("carTrafficLight4",  new CarCamera("Cam14")));
 
-
-                Camera walkCam1 = new WalkerCamera("Cam1");
-                Camera walkCam2 = new WalkerCamera("Cam2");
-                Camera walkCam3 = new WalkerCamera("Cam3");
-                Camera walkCam4 = new WalkerCamera("Cam4");
-                Camera walkCam5 = new WalkerCamera("Cam5");
-                Camera walkCam6 = new WalkerCamera("Cam6");
-                Camera walkCam7 = new WalkerCamera("Cam7");
-                Camera walkCam8 = new WalkerCamera("Cam8");
 
             }
         };
